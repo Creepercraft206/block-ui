@@ -1,1 +1,43 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --blockui-file-input-width: 500px;
+  --blockui-file-input-height: 100px;
+  --blockui-file-input-border-radius: 10px;
+  --blockui-file-input-font-family: sans-serif;
+  --blockui-file-input-primary-color: black;
+  --blockui-file-input-secondary-color: rgb(200, 200, 200);
+  --blockui-file-input-background-color: white;
+
+  --blockui-modal-width: 90%;
+  --blockui-modal-max-width: 800px;
+  --blockui-modal-height: 90%;
+  --blockui-modal-max-height: 600px;
+  --blockui-modal-border-radius: 5px;
+  --blockui-modal-background: rgba(0, 0, 0, 0.5);
+  --blockui-modal-font-family: sans-serif;
+  --blockui-modal-primary-color: black;
+  --blockui-modal-secondary-color: rgb(200, 200, 200);
+  --blockui-modal-background-color: white;
+  --blockui-modal-background-blur: 0px;
+
+  --blockui-modal-header-background-color: white;
+  --blockui-modal-header-font-family: sans-serif;
+  --blockui-modal-header-primary-color: black;
+  --blockui-modal-header-secondary-color: gray;
+  --blockui-modal-header-border-bottom: 1px solid #ccc;
+
+  --blockui-toggle-color-checked: #0886ed;
+  --blockui-toggle-color-unchecked: #ccc;
+  --blockui-toggle-switch-color: white;
+
+  --blockui-select-width: 200px;
+  --blockui-select-height: 30px;
+  --blockui-select-border-radius: 5px;
+  --blockui-select-font-family: sans-serif;
+  --blockui-select-font-size: 15px;
+  --blockui-select-primary-color: black;
+  --blockui-select-secondary-color: rgb(80, 80, 80);
+  --blockui-select-background-color: white;
+  --blockui-select-border: 1px solid #ccc;
+
+  --blockui-select-option-selected-background-color: #9f9f9f;
+}

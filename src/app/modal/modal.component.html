@@ -1,0 +1,5 @@
+<div class="modal" *ngIf="isOpen" (click)="close()">
+  <div class="window" (click)="$event.stopPropagation()">
+    <ng-content></ng-content>
+  </div>
+</div>

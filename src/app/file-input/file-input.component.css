@@ -1,0 +1,84 @@
+.custom-file-input {
+  position: relative;
+  width: var(--blockui-file-input-width);
+  height: var(--blockui-file-input-height);
+  border-radius: var(--blockui-file-input-border-radius);
+  border: 3px dashed var(--blockui-file-input-secondary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+    margin: 0;
+    color: var(--blockui-file-input-primary-color);
+  }
+  input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+  svg {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 5px;
+    fill: var(--blockui-file-input-primary-color);
+  }
+  .imagePreview {
+    width: fit-content;
+    height: 100px;
+    border-radius: 5px;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    .img-container {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      border-radius: 5px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+      .delete-btn {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: red;
+        border: none;
+        outline: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 5px 0 5px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        cursor: pointer;
+        svg {
+          fill: white;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

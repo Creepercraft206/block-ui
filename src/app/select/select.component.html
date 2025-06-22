@@ -1,0 +1,32 @@
+<div class="select-wrapper">
+  <div [classList]="isOpen ? 'select-container container-open' : 'select-container'">
+    <input type="text"
+           [placeholder]="placeholder"
+           [value]="value"
+           (input)="onInputChange($event)"
+           (click)="onInputClick()">
+    <button (click)="toggleOptionsDropdown()">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="down-arrow" [classList]="isOpen ? 'open' : ''">
+        <g>
+          <path d="M12 17a1.72 1.72 0 0 1-1.33-.64l-4.21-5.1a2.1 2.1 0 0 1-.26-2.21A1.76 1.76 0 0 1 7.79 8h8.42a1.76 1.76 0 0 1 1.59 1.05 2.1 2.1 0 0 1-.26 2.21l-4.21 5.1A1.72 1.72 0 0 1 12 17z"></path>
+        </g>
+      </svg>
+    </button>
+  </div>
+  <div class="select-options-container" *ngIf="isOpen">
+    <div *ngIf="filteredOptions.length === 0" class="no-results">
+      {{ noResultsText }}
+    </div>
+
+    <ng-container *ngIf="filterText === ''; else filtered">
+      <ng-content></ng-content>
+    </ng-container>
+    <ng-template #filtered>
+      <button *ngFor="let option of filteredOptions"
+              [classList]="option.selected ? 'option-item selected' : 'option-item'"
+              (click)="selectOption(option.value)">
+        {{ option.label }}
+      </button>
+    </ng-template>
+  </div>
+</div>

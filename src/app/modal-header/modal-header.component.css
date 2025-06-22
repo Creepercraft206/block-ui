@@ -1,0 +1,28 @@
+.window-header {
+  position: sticky;
+  top: 0;
+  background-color: var(--blockui-modal-header-background-color);
+  width: calc(100% - 40px);
+  padding: 10px 20px;
+  z-index: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: var(--blockui-modal-header-border-bottom);
+  font-family: var(--blockui-modal-header-font-family), sans-serif;
+  color: var(--blockui-modal-header-primary-color);
+}
+
+.close-modal-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 0 !important;
+  padding: 5px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  svg g {
+    stroke: var(--blockui-modal-header-secondary-color);
+  }
+}

@@ -1,0 +1,7 @@
+.window-content {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: calc(var(--blockui-modal-max-height) - 65px);
+  height: calc(var(--blockui-modal-height) - 5px);
+  padding: 10px 20px;
+}
