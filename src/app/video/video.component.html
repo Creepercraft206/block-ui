@@ -1,0 +1,62 @@
+<div class="video-wrapper">
+  <video [src]="videoUrl" [loop]="loop" [autoplay]="autoPlay" [controls]="false" (timeupdate)="update()" (mousemove)="mouseMove($event)" (mouseleave)="mouseMove($event)" (click)="togglePlay()"></video>
+  <div class="video-overlay" *ngIf="controls">
+    <div class="progress-bar-wrapper">
+      <input class="progress-bar" type="range" min="0" max="100" [value]="progress" (input)="setProgress($event)" />
+      <div class="progress-bar-background">
+        <div class="progress"></div>
+      </div>
+    </div>
+    <div class="video-controls">
+      <button (click)="togglePlay()">
+        <ng-container *ngIf="isPlaying; else pause">
+          <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M80.169 46.4545C82.6103 47.808 82.6103 51.192 80.169 52.5455L22.493 84.5236C20.0516 85.8772 17 84.1852 17 81.4781V17.5219C17 14.8148 20.0516 13.1228 22.493 14.4764L80.169 46.4545Z" fill="white"/>
+          </svg>
+        </ng-container>
+        <ng-template #pause>
+          <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M31 19V80M69 19V80" stroke="white" stroke-width="20" stroke-linecap="round"/>
+          </svg>
+        </ng-template>
+      </button>
+      <button (click)="toggleMute()" class="mute-btn">
+        <ng-container *ngIf="isMuted; else unmute">
+          <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 35.8462V63.1538H25.3869L47.236 85V14L25.3869 35.8462H9Z" fill="white"/>
+            <path d="M59.2426 38L84.0172 62.7746M59 62.7746L83.7746 38" stroke="white" stroke-width="6" stroke-linecap="round"/>
+          </svg>
+        </ng-container>
+        <ng-template #unmute>
+          <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 35.8462V63.1538H25.3869L47.236 85V14L25.3869 35.8462H9Z" fill="white"/>
+            <path d="M54.2795 32C56.5919 32 58.8817 32.4527 61.0181 33.3321C63.1544 34.2116 65.0956 35.5006 66.7307 37.1256C68.3658 38.7507 69.6629 40.6798 70.5478 42.803C71.4327 44.9262 71.8882 47.2019 71.8882 49.5C71.8882 51.7981 71.4327 54.0738 70.5478 56.197C69.6629 58.3202 68.3658 60.2493 66.7307 61.8744C65.0956 63.4994 63.1544 64.7884 61.0181 65.6679C58.8817 66.5473 56.5919 67 54.2795 67V32Z" fill="white"/>
+            <path d="M54.2795 14C58.9704 14 63.6153 14.9182 67.9491 16.7023C72.283 18.4863 76.2207 21.1012 79.5377 24.3977C82.8547 27.6942 85.4858 31.6077 87.2809 35.9147C89.0761 40.2218 90 44.8381 90 49.5C90 54.1619 89.0761 58.7782 87.2809 63.0853C85.4858 67.3923 82.8547 71.3058 79.5377 74.6023C76.2207 77.8988 72.2829 80.5137 67.9491 82.2977C63.6153 84.0818 58.9704 85 54.2795 85V73.995C57.5162 73.995 60.7212 73.3614 63.7116 72.1304C66.7019 70.8994 69.419 69.0952 71.7077 66.8206C73.9964 64.546 75.8119 61.8457 77.0505 58.8738C78.2891 55.902 78.9266 52.7167 78.9266 49.5C78.9266 46.2833 78.2891 43.098 77.0505 40.1262C75.8119 37.1543 73.9964 34.454 71.7077 32.1794C69.419 29.9048 66.7019 28.1006 63.7116 26.8696C60.7212 25.6386 57.5162 25.005 54.2795 25.005V14Z" fill="white"/>
+          </svg>
+        </ng-template>
+        <div class="volume-bar">
+          <input type="range" min="0" max="100" [value]="volume" (input)="setVolume($event)" />
+        </div>
+      </button>
+      <span>{{ getVideoTime() }}</span>
+      <button (click)="toggleFullScreen()">
+        <ng-container *ngIf="isFullScreen; else exitFullScreen">
+          <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M36 14C36 14 36 20 36 28C36 36 36 36 28 36H14" stroke="white" stroke-width="10" stroke-linecap="round"/>
+            <path d="M14 63C14 63 20 63 28 63C36 63 36 63 36 71V85" stroke="white" stroke-width="10" stroke-linecap="round"/>
+            <path d="M63 85C63 85 63 79 63 71C63 63 63 63 71 63H85" stroke="white" stroke-width="10" stroke-linecap="round"/>
+            <path d="M85 36C85 36 79 36 71 36C63 36 63 36 63 28V14" stroke="white" stroke-width="10" stroke-linecap="round"/>
+          </svg>
+        </ng-container>
+        <ng-template #exitFullScreen>
+          <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 36C14 36 14 30 14 22C14 14 14 14 22 14H36" stroke="white" stroke-width="10" stroke-linecap="round"/>
+            <path d="M36 85C36 85 30 85 22 85C14 85 14 85 14 77L14 63" stroke="white" stroke-width="10" stroke-linecap="round"/>
+            <path d="M85 63C85 63 85 69 85 77C85 85 85 85 77 85H63" stroke="white" stroke-width="10" stroke-linecap="round"/>
+            <path d="M63 14C63 14 69 14 77 14C85 14 85 14 85 22V36" stroke="white" stroke-width="10" stroke-linecap="round"/>
+          </svg>
+        </ng-template>
+      </button>
+    </div>
+  </div>
+</div>

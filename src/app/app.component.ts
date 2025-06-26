@@ -7,10 +7,11 @@ import {ModalContentComponent} from './modal-content/modal-content.component';
 import {ToggleComponent} from './toggle/toggle.component';
 import {SelectComponent} from './select/select.component';
 import {SelectOptionComponent} from './select-option/select-option.component';
+import {VideoComponent} from './video/video.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FileInputComponent, ModalComponent, ModalHeaderComponent, ModalContentComponent, ToggleComponent, SelectComponent, SelectOptionComponent],
+  imports: [RouterOutlet, FileInputComponent, ModalComponent, ModalHeaderComponent, ModalContentComponent, ToggleComponent, SelectComponent, SelectOptionComponent, VideoComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

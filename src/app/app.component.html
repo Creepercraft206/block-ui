@@ -1,4 +1,6 @@
 <main>
+  <img src="assets/BlockUI.svg" width="150" alt="">
+
   <block-file-input (filesSelected)="setFileName($event)" [multiple]="true" [accept]="['image/png','image/jpeg','image/svg+xml']"></block-file-input>
   <p>Filename: {{ fileName }}</p>
 
@@ -29,6 +31,12 @@
     <block-select-option label="Test Label 2" value="Test 2"></block-select-option>
   </block-select>
   <p>Selected Options: {{ selectedOptions }}</p>
+
+  <br><hr><br>
+
+  <block-video videoUrl="assets/test.mp4" [controls]="true" [autoPlay]="true" [loop]="true"></block-video>
+  <br>
+  <video src="assets/test.mp4" width="500" controls></video>
 </main>
 
 <router-outlet />

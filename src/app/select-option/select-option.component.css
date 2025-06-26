@@ -15,5 +15,5 @@ button {
 
 button.selected {
   background-color: var(--blockui-select-option-selected-background-color);
-  color: var(--blockui-select-secondary-color);
+  color: var(--blockui-select-option-selected-color);
 }

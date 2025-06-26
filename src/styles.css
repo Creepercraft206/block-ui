@@ -39,5 +39,12 @@
   --blockui-select-background-color: white;
   --blockui-select-border: 1px solid #ccc;
 
-  --blockui-select-option-selected-background-color: #9f9f9f;
+  --blockui-select-option-selected-background-color: #e8e8e8;
+  --blockui-select-option-selected-color: #161616;
+
+  --blockui-video-player-width: 500px;
+  --blockui-video-player-height: 300px;
+  --blockui-video-player-border-radius: 10px;
+  --blockui-video-progress-bar-passed: #0886ed;
+  --blockui-video-progress-bar-unpassed: #ccc;
 }
