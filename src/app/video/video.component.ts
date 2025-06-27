@@ -14,6 +14,7 @@ export class VideoComponent implements AfterViewInit {
   @Input() autoPlay: boolean = false;
   @Input() controls: boolean = true;
   @Input() loop: boolean = false;
+  @Input() header: boolean = false;
 
   protected videoElement: HTMLVideoElement | null = null;
 
@@ -186,6 +187,9 @@ export class VideoComponent implements AfterViewInit {
       if (overlay) {
         overlay.style.opacity = '1';
       }
+      if (this.header) {
+        (document.querySelector('.video-header') as HTMLDivElement).style.opacity  = '1';
+      }
       document.body.style.cursor = 'default';
       if (!this.isPlaying) return;
       this.lastMouseX = event.clientX;
@@ -194,6 +198,9 @@ export class VideoComponent implements AfterViewInit {
         if (this.lastMouseX === event.clientX && this.lastMouseY === event.clientY) {
           if (overlay) {
             overlay.style.opacity = '0';
+          }
+          if (this.header) {
+            (document.querySelector('.video-header') as HTMLDivElement).style.opacity  = '0';
           }
           if (document.fullscreenEnabled && this.isFullScreen) {
             document.body.style.cursor = 'none';

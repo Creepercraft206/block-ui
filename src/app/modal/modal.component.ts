@@ -19,6 +19,12 @@ export class ModalComponent implements OnInit {
     this.openState.subscribe((isOpen: boolean) => {
       this.isOpen = isOpen;
     });
+
+    document.addEventListener('keydown', (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && this.isOpen) {
+        this.close();
+      }
+    });
   }
 
   close(): void {

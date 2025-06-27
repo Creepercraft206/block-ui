@@ -1,4 +1,7 @@
 <div class="video-wrapper">
+  <div class="video-header" *ngIf="header">
+    <ng-content></ng-content>
+  </div>
   <video [src]="videoUrl" [loop]="loop" [autoplay]="autoPlay" [controls]="false" (timeupdate)="update()" (mousemove)="mouseMove($event)" (mouseleave)="mouseMove($event)" (click)="togglePlay()"></video>
   <div class="video-overlay" *ngIf="controls">
     <div class="progress-bar-wrapper">
@@ -11,12 +14,12 @@
       <button (click)="togglePlay()">
         <ng-container *ngIf="isPlaying; else pause">
           <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M80.169 46.4545C82.6103 47.808 82.6103 51.192 80.169 52.5455L22.493 84.5236C20.0516 85.8772 17 84.1852 17 81.4781V17.5219C17 14.8148 20.0516 13.1228 22.493 14.4764L80.169 46.4545Z" fill="white"/>
+            <path d="M31 19V80M69 19V80" stroke="white" stroke-width="20" stroke-linecap="round"/>
           </svg>
         </ng-container>
         <ng-template #pause>
           <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M31 19V80M69 19V80" stroke="white" stroke-width="20" stroke-linecap="round"/>
+            <path d="M80.169 46.4545C82.6103 47.808 82.6103 51.192 80.169 52.5455L22.493 84.5236C20.0516 85.8772 17 84.1852 17 81.4781V17.5219C17 14.8148 20.0516 13.1228 22.493 14.4764L80.169 46.4545Z" fill="white"/>
           </svg>
         </ng-template>
       </button>
