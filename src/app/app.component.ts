@@ -8,10 +8,11 @@ import {ToggleComponent} from './toggle/toggle.component';
 import {SelectComponent} from './select/select.component';
 import {SelectOptionComponent} from './select-option/select-option.component';
 import {VideoComponent} from './video/video.component';
+import {MathComponent} from './math/math.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FileInputComponent, ModalComponent, ModalHeaderComponent, ModalContentComponent, ToggleComponent, SelectComponent, SelectOptionComponent, VideoComponent],
+  imports: [RouterOutlet, FileInputComponent, ModalComponent, ModalHeaderComponent, ModalContentComponent, ToggleComponent, SelectComponent, SelectOptionComponent, VideoComponent, MathComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -24,6 +25,8 @@ export class AppComponent {
   switchState: string = "Toggle is OFF";
 
   selectedOptions: string[] = [];
+
+  expression: string = 'c = \\pm\\sqrt{a^2 + b^2}';
 
   setSwitchState(state: boolean): void {
     if (state) {
@@ -47,5 +50,10 @@ export class AppComponent {
 
   getSelectedOptions(options: SelectOptionComponent[]): void {
     this.selectedOptions = options.map(option => option.label);
+  }
+
+  updateExpression(event: Event): void {
+    const target = event.target as HTMLInputElement;
+    this.expression = target.value;
   }
 }

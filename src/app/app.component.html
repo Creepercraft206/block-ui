@@ -39,6 +39,11 @@
   </block-video>
   <br>
   <video src="assets/test.mp4" width="500" controls></video>
+
+  <br><hr><br>
+
+  <block-math [expression]="expression"></block-math>
+  <input type="text" (input)="updateExpression($event)">
 </main>
 
 <router-outlet />

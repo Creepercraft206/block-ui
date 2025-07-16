@@ -12,6 +12,7 @@ The following components are currently available in BlockUI:
 - Custom select dropdowns (supporting search, multiple selections, and more)
 - Toggles (supporting custom events)
 - Custom Video Player (with custom controls and keyboard shortcuts)
+- Math Expressions via Katex (supporting LaTeX syntax for mathematical expressions)
 
 More Components are planned for future releases.
 
