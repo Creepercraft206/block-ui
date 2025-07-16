@@ -1,8 +1,14 @@
 {
-  "name": "blockui",
+  "name": "blockui-components",
   "version": "1.0.0",
   "author": "Tim Bahlinger",
   "description": "Various UI-Components for Angular (V.19)",
+  "keywords": ["angular", "ui", "components", "library"],
+  "homepage": "https://www.timbahlinger.de",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Creepercraft206/block-ui.git"
+  },
   "bugs": "https://github.com/Creepercraft206/block-ui/issues",
   "peerDependencies": {
     "@angular/common": "^19.2.0",
@@ -10,7 +16,7 @@
   },
   "dependencies": {
     "tslib": "^2.3.0",
-    "katex": "^0.16.12"
+    "katex": "^0.16.22"
   },
   "sideEffects": false
 }
