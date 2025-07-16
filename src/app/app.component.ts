@@ -1,14 +1,16 @@
 import {Component, EventEmitter} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {FileInputComponent} from './file-input/file-input.component';
-import {ModalComponent} from './modal/modal.component';
-import {ModalHeaderComponent} from './modal-header/modal-header.component';
-import {ModalContentComponent} from './modal-content/modal-content.component';
-import {ToggleComponent} from './toggle/toggle.component';
-import {SelectComponent} from './select/select.component';
-import {SelectOptionComponent} from './select-option/select-option.component';
-import {VideoComponent} from './video/video.component';
-import {MathComponent} from './math/math.component';
+import {
+  FileInputComponent,
+  ModalComponent,
+  ModalHeaderComponent,
+  ModalContentComponent,
+  ToggleComponent,
+  SelectComponent,
+  SelectOptionComponent,
+  VideoComponent,
+  MathComponent
+} from 'blockui';
 
 @Component({
   selector: 'app-root',
